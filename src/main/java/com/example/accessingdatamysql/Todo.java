@@ -5,15 +5,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity // This tells Hibernate to make a table out of this class
-public class User {
+@Entity
+public class Todo {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)//自动生成,自增
+    @GeneratedValue(strategy= GenerationType.AUTO)//自动生成,自增
     private Integer id;
 
     private String name;
 
-    private String email;
+    private boolean isCompleted;
 
     public Integer getId() {
         return id;
@@ -31,11 +31,11 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public boolean isCompleted() {
+        return isCompleted;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }
