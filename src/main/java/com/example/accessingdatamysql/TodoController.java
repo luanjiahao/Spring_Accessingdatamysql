@@ -22,6 +22,14 @@ public class TodoController {
         return "saved";
     }
 
+    @PostMapping("delete")
+    public @ResponseBody String deleteTodo(@RequestParam Integer id){
+
+        todoRepository.deleteById(id);
+            return "deleted";
+
+    }
+
     @GetMapping("all")
     public @ResponseBody Iterable<Todo> getAllTodos(){
         return todoRepository.findAll();
